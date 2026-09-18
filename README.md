@@ -16,7 +16,7 @@
 `Generator-Icon-Script/                                                
 │                                                                        
 ├── 📁 css/ # Стилі для веб-інтерфейсу                                                    
-│ └── *.css # CSS файли                                                                   
+│ └── *.css # CSS файли                                                                    
 │                                                                                         
 ├── 📁 database/ # Робота з базою даних                                                   
 │ ── db.php # Підключення до MySQL (GIScript)                                             
