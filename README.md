@@ -13,57 +13,58 @@
 ---
 
 ## Структура проєкту
-Generator-Icon-Script/
-│
-├── 📁 css/ # Стилі для веб-інтерфейсу
-│ └── *.css # CSS файли
-│
-├── 📁 database/ # Робота з базою даних
-│ ── db.php # Підключення до MySQL (GIScript)
-│
-├── logi/ # Логи системи
-│ └── delete_log.txt # Лог видалень
-│
-├── 📁 php/ # PHP-логіка (існуючий бекенд)
-│ ├── Index.php # Головна сторінка
-│ ├── Login.php # Авторизація
-│ ├── Reg.php # Реєстрація
-│ ├── admin.php # Панель адміністратора
-│ ├── icon.php # Робота з іконками
-│ ├── favorite.php # Обране
-│ ├── rate.php # Рейтинги
-│ └── ...
-│
-├── 📁 GIS.Api/ # ASP.NET Core Web API (новий бекенд)
-│ ├── 📁 GIS.Api.Web/ # Web-шар (Controllers, Program.cs)
-│ │ ├── Controllers/
-│ │ │ ├── IconsController.cs
-│ │ │ ├── UsersController.cs
-│ │ │ └── AdminController.cs
-│ │ ├── Program.cs
-│ │ ├── appsettings.json
-│ │ └── GIS.Api.Web.csproj
-│ │
-│ ├── 📁 GIS.Api.Core/ # Бізнес-логіка
-│ │ ├── Entities/ # Entity-моделі
-│ │ ├── DTOs/ # Data Transfer Objects
-│ │ ├── Interfaces/ # Інтерфейси сервісів
-│ │ ├── Services/ # Реалізація сервісів
-│ │ └── Exceptions/ # Кастомні винятки
-│ │
-│ ├── GIS.Api.Infrastructure/ # Робота з даними
-│ │ ├── Data/
-│ │ │ └── AppDbContext.cs
-│ │ ├── Migrations/ # EF Core міграції
-│ │ └── Repositories/
-│ │
-│ └── 📁 GIS.Api.Tests/ # Тести
-│ ├── UnitTests/
-│ ── IntegrationTests/
-│
-├── 📁 web-design/ # Дизайн веб-інтерфейсу
-├── 📁 javaScript/ # Frontend-логіка
+Generator-Icon-Script/ 
+│ 
+├── 📁 css/ # Стилі для веб-інтерфейсу 
+│ └── *.css # CSS файли 
+│ 
+├── 📁 database/ # Робота з базою даних 
+│ ── db.php # Підключення до MySQL (GIScript) 
+│ 
+├── logi/ # Логи системи 
+│ └── delete_log.txt # Лог видалень 
+│ 
+├── 📁 php/ # PHP-логіка (існуючий бекенд) 
+│ ├── Index.php # Головна сторінка 
+│ ├── Login.php # Авторизація 
+│ ├── Reg.php # Реєстрація 
+│ ├── admin.php # Панель адміністратора 
+│ ├── icon.php # Робота з іконками 
+│ ├── favorite.php # Обране 
+│ ├── rate.php # Рейтинги 
+│ └── ... 
+│ 
+├── 📁 GIS.Api/ # ASP.NET Core Web API (новий бекенд) 
+│ ├── 📁 GIS.Api.Web/ # Web-шар (Controllers, Program.cs) 
+│ │ ├── Controllers/ 
+│ │ │ ├── IconsController.cs 
+│ │ │ ├── UsersController.cs 
+│ │ │ └── AdminController.cs 
+│ │ ├── Program.cs 
+│ │ ├── appsettings.json 
+│ │ └── GIS.Api.Web.csproj 
+│ │ 
+│ ├── 📁 GIS.Api.Core/ # Бізнес-логіка 
+│ │ ├── Entities/ # Entity-моделі 
+│ │ ├── DTOs/ # Data Transfer Objects 
+│ │ ├── Interfaces/ # Інтерфейси сервісів 
+│ │ ├── Services/ # Реалізація сервісів 
+│ │ └── Exceptions/ # Кастомні винятки 
+│ │ 
+│ ├── GIS.Api.Infrastructure/ # Робота з даними 
+│ │ ├── Data/ 
+│ │ │ └── AppDbContext.cs 
+│ │ ├── Migrations/ # EF Core міграції 
+│ │ └── Repositories/ 
+│ │ 
+│ └── 📁 GIS.Api.Tests/ # Тести 
+│ ├── UnitTests/ 
+│ ── IntegrationTests/ 
+│ 
+├── 📁 web-design/ # Дизайн веб-інтерфейсу 
+├── 📁 javaScript/ # Frontend-логіка 
 └── README.md
+
 
 ## Технології
 ### Backend (існуючий)
