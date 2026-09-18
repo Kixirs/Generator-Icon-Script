@@ -13,7 +13,7 @@
 ---
 
 ## Структура проєкту
-Generator-Icon-Script/ 
+`Generator-Icon-Script/ 
 │ 
 ├── 📁 css/ # Стилі для веб-інтерфейсу 
 │ └── *.css # CSS файли 
@@ -63,7 +63,7 @@ Generator-Icon-Script/
 │ 
 ├── 📁 web-design/ # Дизайн веб-інтерфейсу 
 ├── 📁 javaScript/ # Frontend-логіка 
-└── README.md
+└── README.md`
 
 
 ## Технології
