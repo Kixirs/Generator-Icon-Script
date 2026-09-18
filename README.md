@@ -1,7 +1,183 @@
+# Generator Icon Script (GIS)
+
+**Generator Icon Script** — це веб-платформа для пошуку та використання готових векторних іконок для проєктів, а також AI-інструмент для генерації індивідуальних іконок за текстовим описом (промптом).
+
+**Основні можливості:**
+- 🎨 Каталог готових векторних іконок з можливістю фільтрації та пошуку
+- 🤖 AI-генерація унікальних іконок за описом користувача
+-  Система обраних іконок (Favorites)
+- 📊 Система рейтингів та оцінок іконок
+- 👥 Авторизація та ролі користувачів (User, Admin)
+- 📥 Завантаження іконок у форматі SVG
+
+---
+
+## Структура проєкту
+Generator-Icon-Script/
+│
+├── 📁 css/ # Стилі для веб-інтерфейсу
+│ └── *.css # CSS файли
+│
+├── 📁 database/ # Робота з базою даних
+│ ── db.php # Підключення до MySQL (GIScript)
+│
+├── logi/ # Логи системи
+│ └── delete_log.txt # Лог видалень
+│
+├── 📁 php/ # PHP-логіка (існуючий бекенд)
+│ ├── Index.php # Головна сторінка
+│ ├── Login.php # Авторизація
+│ ├── Reg.php # Реєстрація
+│ ├── admin.php # Панель адміністратора
+│ ├── icon.php # Робота з іконками
+│ ├── favorite.php # Обране
+│ ├── rate.php # Рейтинги
+│ └── ...
+│
+├── 📁 GIS.Api/ # ASP.NET Core Web API (новий бекенд)
+│ ├── 📁 GIS.Api.Web/ # Web-шар (Controllers, Program.cs)
+│ │ ├── Controllers/
+│ │ │ ├── IconsController.cs
+│ │ │ ├── UsersController.cs
+│ │ │ └── AdminController.cs
+│ │ ├── Program.cs
+│ │ ├── appsettings.json
+│ │ └── GIS.Api.Web.csproj
+│ │
+│ ├── 📁 GIS.Api.Core/ # Бізнес-логіка
+│ │ ├── Entities/ # Entity-моделі
+│ │ ├── DTOs/ # Data Transfer Objects
+│ │ ├── Interfaces/ # Інтерфейси сервісів
+│ │ ├── Services/ # Реалізація сервісів
+│ │ └── Exceptions/ # Кастомні винятки
+│ │
+│ ├── GIS.Api.Infrastructure/ # Робота з даними
+│ │ ├── Data/
+│ │ │ └── AppDbContext.cs
+│ │ ├── Migrations/ # EF Core міграції
+│ │ └── Repositories/
+│ │
+│ └── 📁 GIS.Api.Tests/ # Тести
+│ ├── UnitTests/
+│ ── IntegrationTests/
+│
+├── 📁 web-design/ # Дизайн веб-інтерфейсу
+├── 📁 javaScript/ # Frontend-логіка
+└── README.md
+
+## Технології
+### Backend (існуючий)
+- **PHP** — серверна мова програмування
+- **MySQL** — реляційна база даних
+- **PDO** — інтерфейс для роботи з БД
+
+### Backend (новий — API)
+- **ASP.NET Core 8 Web API** — фреймворк для створення REST API
+- **C#** — мова програмування
+- **Entity Framework Core** — ORM для роботи з базою даних
+- **AutoMapper** — мапінг між Entity та DTO
+- **Swagger/OpenAPI** — документація API
+- **xUnit** — фреймворк для тестування
+- **Moq** — бібліотека для мокування в тестах
+
+### Frontend
+- **HTML5/CSS3** — розмітка та стилі
+- **JavaScript** — інтерактивність
+- **SVG** — формат векторних іконок
+
+### Інструменти
+- **Git/GitHub** — система контролю версій
+- **GitHub Projects** — Kanban-дошка для управління завданнями
+- **Visual Studio / VS Code** — IDE для розробки
+
+---
+
+## Залежності
+
+### Для ASP.NET Core API проєкту
+
+**Основні NuGet-пакети:**
+
+
+
+## Запуск проєкту
+Інструкція зі встановлення залежностей та запуску.
+
+## Команда
+Перелік учасників команди та їхні ролі.
+
+```xml
+<!-- GIS.Api.Web -->
+<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0" />
+<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+
+<!-- GIS.Api.Core -->
+<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+<PackageReference Include="FluentValidation" Version="11.9.0" />
+
+<!-- GIS.Api.Infrastructure -->
+<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+<PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.0" />
+
+<!-- GIS.Api.Tests -->
+<PackageReference Include="xunit" Version="2.6.6" />
+<PackageReference Include="xunit.runner.visualstudio" Version="2.5.6" />
+<PackageReference Include="Moq" Version="4.20.70" />
+<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.0" />
+```
+
+
 GIS - платформа де можна знайти різні векторні іконки для своїх проєктів. Також для індивідуальних іконок встроєний AI який по опису згенерує вам іконку по вашому промту
 
+##Для PHP-частини
+PHP 7.4+
+MySQL 5.7+
+PDO MySQL драйвер
 
-Структура                                 
+#Запуск проєкту
+1. Клонувати репозиторій
+   
+         ```git clone https://github.com/Kixirs/Generator-Icon-Script.git
+            cd Generator-Icon-Script```
+
+2. Налаштування бази даних
+  1. Створіть базу даних GIScript у MySQL:
+     
+```CREATE DATABASE GIScript CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;```
+
+  2. Оновіть підключення у файлі database/db.php:
+
+    ```$host = 'localhost';
+       $db = 'GIScript';
+       $user = 'root';
+       $pass = 'ваш_пароль';```
+
+3. Запуск ASP.NET Core API
+   
+# Перейти до API проєкту
+cd GIS.Api
+
+# Відновити залежності
+dotnet restore
+
+# Застосувати міграції бази даних
+dotnet ef database update --project GIS.Api.Infrastructure --startup-project GIS.Api.Web
+
+# Запустити API
+dotnet run --project GIS.Api.Web
+
+PI буде доступний за адресою: https://localhost:5001 або http://localhost:5000
+
+Swagger UI: https://localhost:5001/swagger
+
+#Документація API
+Після запуску ASP.NET Core API, Swagger UI доступний за адресою:
+
+```https://localhost:5001/swagger```
+
+
+##Структура                                 
 
 ——————————————————                                                   
 
