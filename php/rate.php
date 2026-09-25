@@ -18,6 +18,9 @@ if ($iconId <= 0) {
     exit;
 }
 
+
+
+
 try {
     if ($rating == 0) {
         $stmt = $pdo->prepare("delete Ffrom ratings where user_id = ? AND icon_id = ?");
