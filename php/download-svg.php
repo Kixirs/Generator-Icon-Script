@@ -1,5 +1,5 @@
 <?php
-require_once 'db.php';
+require_once '../database/db.php';
 
 // Перевірка наявності ID
 if (!isset($_GET['id'])) {

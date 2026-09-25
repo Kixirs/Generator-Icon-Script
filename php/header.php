@@ -32,6 +32,6 @@
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-bold-sharp/css/uicons-bold-sharp.css">
 
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>

@@ -1,0 +1,9 @@
+openapi: 3.0.3
+
+info: 
+  title: Generator Icon Script API
+  description: API для роботи з іконками, обраними та оцінками користувачів.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost/Generator%20Icon%20Script/php/

@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once 'db.php';
-include 'header.php';
+require_once '../database/db.php';
+include '../php/header.php';
 
 // query => На те щоб просто вивести дані(select). 
 // fetchAll => Отримання всіх даних. 
