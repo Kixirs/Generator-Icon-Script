@@ -23,7 +23,7 @@ if ($iconId <= 0) {
 
 try {
     if ($rating == 0) {
-        $stmt = $pdo->prepare("delete Ffrom ratings where user_id = ? AND icon_id = ?");
+        $stmt = $pdo->prepare("delete from ratings where user_id = ? AND icon_id = ?");
         $stmt->execute([$userId, $iconId]);
     } else {
         $stmt = $pdo->prepare("

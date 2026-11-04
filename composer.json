@@ -1,0 +1,8 @@
+{
+    "name": "kixirs/generator-icon-script",
+    "description": "Generator Icon Script",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
