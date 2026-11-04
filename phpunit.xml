@@ -24,9 +24,4 @@
             <directory suffix=".php">database</directory>
         </include>
     </source>
-    <coverage>
-        <report>
-            <html outputDirectory="reports/html" lowUpperBound="50" highLowerBound="90"/>
-        </report>
-    </coverage>
 </phpunit>
