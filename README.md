@@ -27,7 +27,7 @@ GIS - платформа де можна знайти різні векторн�
 ├── 📁 database/ # Робота з базою даних                                                   
 │ ── db.php # Підключення до MySQL (GIScript)                                             
 │                                                                
-├── logi/ # Логи системи                                                                
+├── 📁 logi/ # Логи системи                                                                
 │ └── delete_log.txt # Лог видалень                                                       
 │                                                                 
 ├── 📁 php/ # PHP-логіка (існуючий бекенд)                                                
@@ -42,7 +42,7 @@ GIS - платформа де можна знайти різні векторн�
 │                                                                
 ├── 📁 GIS.Api/ # ASP.NET Core Web API (новий бекенд)                                     
 │ ├── 📁 GIS.Api.Web/ # Web-шар (Controllers, Program.cs)                                 
-│ │ ├── Controllers/                                                                
+│ │ ├── 📁 Controllers/                                                                
 │ │ │ ├── IconsController.cs                                                              
 │ │ │ ├── UsersController.cs                                                              
 │ │ │ └── AdminController.cs                                                              
@@ -57,7 +57,7 @@ GIS - платформа де можна знайти різні векторн�
 │ │ ├── Services/ # Реалізація сервісів                                                   
 │ │ └── Exceptions/ # Кастомні винятки                                                    
 │ │                                                                
-│ ├── GIS.Api.Infrastructure/ # Робота з даними                                           
+│ ├── 📁 GIS.Api.Infrastructure/ # Робота з даними                                           
 │ │ ├── Data/                                                                
 │ │ │ └── AppDbContext.cs                                                                
 │ │ ├── Migrations/ # EF Core міграції                                                    

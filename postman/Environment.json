@@ -1,0 +1,11 @@
+{
+  "id": "gis-env-2026",
+  "name": "GIS-Local",
+  "values": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost/Generator-Icon-Script",
+      "enabled": true
+    }
+  ]
+}

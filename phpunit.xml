@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://w3.org"
+         xsi:noNamespaceSchemaLocation="https://phpunit.de"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         cacheResult="false">
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Exceptions">
+            <directory>tests/Exceptions</directory>
+        </testsuite>
+        <testsuite name="Mock">
+            <directory>tests/Mock</directory>
+        </testsuite>
+        <testsuite name="Integration">
+            <directory>tests/Integration</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory suffix=".php">php</directory>
+            <directory suffix=".php">database</directory>
+        </include>
+    </source>
+    <coverage>
+        <report>
+            <html outputDirectory="reports/html" lowUpperBound="50" highLowerBound="90"/>
+        </report>
+    </coverage>
+</phpunit>
