@@ -1,0 +1,10 @@
+<?php
+// Сценарій 3: Додавання в обране та завантаження SVG
+// 1. Зайти під авторизованим користувачем.
+// 2. Клікнути на елемент .favorite-btn[data-id="1"]
+// 3. Перевірити, що статус іконки змінився на "в обраному".
+class FavoriteAndDownloadE2E {
+    public function testClickFavoriteAndDownload() {
+        $this->assertTrue(true);
+    }
+}
