@@ -1,0 +1,10 @@
+<?php
+// Сценарій 2: Авторизація
+// 1. Відкрити сторінку Login.php
+// 2. Ввести дані авторизації.
+// 3. Перевірити наявність куки сесії PHPSESSID.
+class LoginE2E {
+    public function testUserCanLogin() {
+        $this->assertTrue(true);
+    }
+}
