@@ -1,38 +1,20 @@
 <?php
-session_start();
-require_once '../database/db.php';
+require_once __DIR__ . '/../database/db.php';
+require_once __DIR__ . '/ReliabilityService.php';
 
-header('Content-Type: application/json');
-
-if (!isset($_SESSION['user_id'])) {
-    echo json_encode(['status' => 'error', 'message' => 'Авторизуйтесь']);
-    exit;
+if (!ReliabilityService::checkRateLimit('rate_icon', 5, 60)) {
+    http_response_code(429); // Too Many Requests
+    die(json_encode(["error" => "Too many requests. Please wait a minute."]));
 }
-
-$userId = $_SESSION['user_id'];
-$iconId = intval($_POST['icon_id'] ?? 0);
-$rating = intval($_POST['rating'] ?? 0);
-
-if ($iconId <= 0) {
-    echo json_encode(['status' => 'error', 'message' => 'Некоректний ID']);
-    exit;
-}
-
-
-
 
 try {
-    if ($rating == 0) {
-        $stmt = $pdo->prepare("delete from ratings where user_id = ? AND icon_id = ?");
-        $stmt->execute([$userId, $iconId]);
-    } else {
-        $stmt = $pdo->prepare("
-            insert into ratings (user_id, icon_id, rating) values (?, ?, ?)
-            on DUPLICATE KEY UPDATE rating = values(rating), created_at = CURRENT_TIMESTAMP
-        ");
-        $stmt->execute([$userId, $iconId, $rating]);
-    }
-    echo json_encode(['status' => 'success']);
-} catch (PDOException $e) {
-    echo json_encode(['status' => 'error', 'message' => 'Помилка БД: ' . $e->getMessage()]);
+    $pdo = getDBConnection();
+    ReliabilityService::executeWithRetry(function() use ($pdo) {
+        $stmt = $pdo->prepare("INSERT INTO ratings (user_id, icon_id, rating) VALUES (?, ?, ?)");
+        $stmt->execute([$_POST['user_id'], $_POST['icon_id'], $_POST['rating']]);
+    });
+    echo json_encode(["success" => "Rating saved successfully"]);
+} catch (Exception $e) {
+    http_response_code(500);
+    echo json_encode(["error" => "Service temporarily unavailable"]);
 }
