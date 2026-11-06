@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once '../database/db.php';
+require_once __DIR__ . '/../database/db.php';
+$pdo = getDBConnection(); 
 include '../php/header.php';
 
 // query => На те щоб просто вивести дані(select). 

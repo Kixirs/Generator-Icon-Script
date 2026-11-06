@@ -680,3 +680,9 @@ INSERT INTO icon (name, category_id, icon_class, svg_path) VALUES
 select * from users;
 select * from category;
 select * from icon;
+
+ALTER TABLE icons ADD INDEX idx_icon_title (title);
+ALTER TABLE users ADD INDEX idx_user_email (email);
+ALTER TABLE favorites ADD INDEX idx_fav_user_icon (user_id, icon_id);
+
+EXPLAIN SELECT * FROM icons WHERE title = 'home';
